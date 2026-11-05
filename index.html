@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPORTIX - Thời Trang Thể Thao Đẳng Cấp & Bứt Phá Giới Hạn</title>
+  <meta name="description" content="Thương hiệu quần áo thể thao cao cấp SPORTIX. Chuyên đồ tập gym, chạy bộ, bóng đá, yoga với công nghệ vải ProDry thoáng mát, co giãn vượt trội.">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-ticker">
+        <span>⚡ BÙNG NỔ MÙA TẬP LUYỆN:</span>
+        <span>Nhập mã <span class="highlight">SPORTIX10</span> giảm ngay 10% đơn từ 300K</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="orders.html"><i class="fa-solid fa-truck-fast"></i> Tra cứu đơn hàng</a>
+        <span>|</span>
+        <a href="tel:19008888"><i class="fa-solid fa-headset"></i> Hotline: 1900 8888</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header & Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Mobile menu button -->
+      <button type="button" class="icon-btn mobile-menu-btn" aria-label="Menu">
+        <i class="fa-solid fa-bars-staggered" style="font-size: 1.25rem;"></i>
+      </button>
+
+      <!-- Brand Logo -->
+      <a href="index.html" class="logo">
+        <span class="logo-badge"><i class="fa-solid fa-bolt"></i></span>
+        <span class="logo-text">SPORT<span>IX</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link active">Trang Chủ</a>
+        <a href="products.html" class="nav-link">Cửa Hàng</a>
+        <a href="products.html?category=gym" class="nav-link">Tập Gym</a>
+        <a href="products.html?category=running" class="nav-link">Chạy Bộ</a>
+        <a href="products.html?category=football" class="nav-link">Bóng Đá</a>
+        <a href="products.html?category=yoga" class="nav-link">Yoga / Nữ</a>
+        <a href="products.html?category=jacket" class="nav-link">Áo Khoác</a>
+        <a href="products.html" class="nav-link hot-deal">Sale <span class="badge">HOT</span></a>
+      </nav>
+
+      <!-- Actions: Search, Wishlist, Cart -->
+      <div class="header-actions">
+        <!-- Live Search -->
+        <div class="header-search-wrap">
+          <input type="text" class="header-search-input" placeholder="Tìm quần áo, phụ kiện...">
+          <button type="button" class="header-search-btn" aria-label="Tìm kiếm">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <!-- Wishlist -->
+        <a href="products.html" class="icon-btn" title="Yêu thích">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge-count wishlist-count-badge" style="display: none;">0</span>
+        </a>
+
+        <!-- Cart Trigger -->
+        <button type="button" class="icon-btn open-cart-drawer" title="Giỏ hàng">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge-count cart-count-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav-drawer" style="position: fixed; top: 0; left: -320px; width: 300px; height: 100vh; background: #fff; z-index: 1000; transition: left 0.3s ease; padding: 24px; display: flex; flex-direction: column; gap: 20px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--color-border); padding-bottom: 16px;">
+      <div class="logo" style="font-size: 1.4rem;">
+        <span class="logo-badge" style="width: 28px; height: 28px; font-size: 0.9rem;"><i class="fa-solid fa-bolt"></i></span>
+        <span class="logo-text">SPORT<span>IX</span></span>
+      </div>
+      <button type="button" class="close-mobile-nav" style="font-size: 1.3rem; color: var(--color-dark);"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div style="margin-bottom: 10px;">
+      <input type="text" class="header-search-input" placeholder="Tìm kiếm sản phẩm..." style="width: 100%;">
+    </div>
+    <nav style="display: flex; flex-direction: column; gap: 14px; font-family: var(--font-heading); font-weight: 700; text-transform: uppercase;">
+      <a href="index.html" style="color: var(--color-primary);">Trang Chủ</a>
+      <a href="products.html">Tất Cả Sản Phẩm</a>
+      <a href="products.html?category=gym">Gym & Fitness</a>
+      <a href="products.html?category=running">Chạy Bộ Marathon</a>
+      <a href="products.html?category=football">Quần Áo Bóng Đá</a>
+      <a href="products.html?category=yoga">Yoga & Thể Thao Nữ</a>
+      <a href="products.html?category=jacket">Áo Khoác Thể Thao</a>
+      <a href="orders.html">Lịch Sử Đơn Hàng</a>
+    </nav>
+  </aside>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="hero-tag">
+          <i class="fa-solid fa-fire"></i> Bộ Sưu Tập Mới 2026
+        </span>
+        <h1 class="hero-title">
+          Bứt Phá <br>
+          <span class="text-highlight">Mọi Giới Hạn</span>
+        </h1>
+        <p class="hero-desc">
+          Công nghệ sợi dệt <strong>ProDry Ultra-Light</strong> siêu thoáng mát, hỗ trợ cơ bắp và chống bám mùi tối ưu. Trải nghiệm sự khác biệt trong từng chuyển động.
+        </p>
+        <div class="hero-actions">
+          <a href="products.html" class="btn btn-primary btn-lg">
+            Khám Phá Ngay <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="products.html?category=gym" class="btn btn-outline-white btn-lg">
+            Đồ Tập Gym
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h3>50K+</h3>
+            <p>Vận động viên tin dùng</p>
+          </div>
+          <div class="stat-item">
+            <h3>100%</h3>
+            <p>Vải sợi nguyên sinh ProDry</p>
+          </div>
+          <div class="stat-item">
+            <h3>4.9★</h3>
+            <p>Hài lòng chất lượng</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image-wrap">
+        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" 
+             alt="Vận động viên SPORTIX" class="hero-img">
+        <div class="floating-badge badge-1">
+          <div class="floating-badge-icon">
+            <i class="fa-solid fa-wind"></i>
+          </div>
+          <div>
+            <h4 style="color: #ffffff; font-size: 0.95rem; margin-bottom: 2px;">Công Nghệ QuickDry</h4>
+            <p style="color: #94a3b8; font-size: 0.78rem;">Khô ráo trong 10 phút tập nặng</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURES STRIP ==================== -->
+  <div class="container">
+    <div class="features-strip">
+      <div class="feature-box">
+        <div class="feature-icon-box">
+          <i class="fa-solid fa-truck-fast"></i>
+        </div>
+        <div class="feature-info">
+          <h4>Giao Hàng Siêu Tốc</h4>
+          <p>Nhận hàng trong 2-4 giờ tại nội thành</p>
+        </div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon-box">
+          <i class="fa-solid fa-rotate-left"></i>
+        </div>
+        <div class="feature-info">
+          <h4>Đổi Trả 30 Ngày</h4>
+          <p>Đổi size miễn phí tận nhà dễ dàng</p>
+        </div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon-box">
+          <i class="fa-solid fa-shield-check"></i>
+        </div>
+        <div class="feature-info">
+          <h4>Chính Hãng 100%</h4>
+          <p>Cam kết chất lượng chuẩn vận động viên</p>
+        </div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon-box">
+          <i class="fa-solid fa-tag"></i>
+        </div>
+        <div class="feature-info">
+          <h4>Ưu Đãi Hấp Dẫn</h4>
+          <p>Giảm đến 30% hàng tuần</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== CATEGORIES SECTION ==================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-tag"><i class="fa-solid fa-layer-group"></i> Bộ Sưu Tập</span>
+          <h2 class="section-title">Danh Mục Thể Thao Nổi Bật</h2>
+        </div>
+        <a href="products.html" class="section-link">Xem tất cả bộ sưu tập <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="category-grid">
+        <a href="products.html?category=gym" class="category-card">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80" alt="Gym & Fitness">
+          <div class="category-content">
+            <h3 class="category-name">Tập Gym & Fitness</h3>
+            <span class="category-count">Áo thun, ba lỗ, jogger</span>
+          </div>
+        </a>
+
+        <a href="products.html?category=running" class="category-card">
+          <img src="https://images.unsplash.com/photo-1483721074577-0130dbb703e0?auto=format&fit=crop&w=600&q=80" alt="Chạy bộ">
+          <div class="category-content">
+            <h3 class="category-name">Chạy Bộ & Điền Kinh</h3>
+            <span class="category-count">Quần 2 lớp, áo phản quang</span>
+          </div>
+        </a>
+
+        <a href="products.html?category=football" class="category-card">
+          <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=600&q=80" alt="Bóng đá">
+          <div class="category-content">
+            <h3 class="category-name">Bóng Đá Thi Đấu</h3>
+            <span class="category-count">Bộ đồ đấu dệt mè kim cương</span>
+          </div>
+        </a>
+
+        <a href="products.html?category=yoga" class="category-card">
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80" alt="Yoga">
+          <div class="category-content">
+            <h3 class="category-name">Yoga & Pilates Nữ</h3>
+            <span class="category-count">Legging nâng mông, sports bra</span>
+          </div>
+        </a>
+
+        <a href="products.html?category=jacket" class="category-card">
+          <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=600&q=80" alt="Áo khoác">
+          <div class="category-content">
+            <h3 class="category-name">Áo Khoác & Giữ Nhiệt</h3>
+            <span class="category-count">Áo gió trượt nước, hoodie</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FLASH SALE SECTION ==================== -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="flash-sale-box">
+        <div class="flash-sale-header">
+          <div class="flash-title-wrap">
+            <i class="fa-solid fa-bolt flash-icon"></i>
+            <div>
+              <h2 style="color: #fff; font-size: 1.8rem; text-transform: uppercase;">Flash Sale Giờ Vàng</h2>
+              <p style="color: #94a3b8; font-size: 0.9rem;">Số lượng có hạn • Ưu đãi chớp nhoáng</p>
+            </div>
+          </div>
+          <!-- Đồng hồ đếm ngược -->
+          <div class="countdown-timer">
+            <div class="countdown-box">
+              <span class="countdown-num" id="countdownHours">07</span>
+              <span class="countdown-lbl">Giờ</span>
+            </div>
+            <span class="countdown-colon">:</span>
+            <div class="countdown-box">
+              <span class="countdown-num" id="countdownMins">45</span>
+              <span class="countdown-lbl">Phút</span>
+            </div>
+            <span class="countdown-colon">:</span>
+            <div class="countdown-box">
+              <span class="countdown-num" id="countdownSecs">20</span>
+              <span class="countdown-lbl">Giây</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flash Sale Items Grid -->
+        <div class="product-grid" id="flashSaleGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURED PRODUCTS ==================== -->
+  <section class="section" style="padding-top: 20px;">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-tag"><i class="fa-solid fa-medal"></i> Bán Chạy Nhất</span>
+          <h2 class="section-title">Sản Phẩm Đang Được Ưa Chuộng</h2>
+          <p class="section-subtitle">Được bình chọn bởi hàng chục nghìn khách hàng tập luyện thể thao thường xuyên</p>
+        </div>
+        <a href="products.html" class="btn btn-outline btn-sm">Xem tất cả sản phẩm</a>
+      </div>
+
+      <!-- Quick category filter pills on home page -->
+      <div class="home-category-pills filter-pills">
+        <button type="button" class="filter-pill active" data-category="all">Tất cả</button>
+        <button type="button" class="filter-pill" data-category="gym">Gym & Fitness</button>
+        <button type="button" class="filter-pill" data-category="running">Chạy bộ</button>
+        <button type="button" class="filter-pill" data-category="yoga">Yoga & Nữ</button>
+        <button type="button" class="filter-pill" data-category="jacket">Áo khoác gió</button>
+      </div>
+
+      <div class="product-grid" id="featuredGrid"></div>
+    </div>
+  </section>
+
+  <!-- ==================== FABRIC TECHNOLOGY BANNER ==================== -->
+  <section class="section" style="background: #0f172a; color: #fff; margin: 40px 0;">
+    <div class="container" style="display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center;">
+      <div>
+        <span class="hero-tag" style="background: rgba(14, 165, 233, 0.15); border-color: rgba(14, 165, 233, 0.4); color: var(--color-secondary);">
+          <i class="fa-solid fa-atom"></i> Nghiên Cứu Đột Phá
+        </span>
+        <h2 style="font-size: 2.4rem; color: #fff; margin-bottom: 20px; text-transform: uppercase;">
+          Công Nghệ Sợi Vải SPORTIX <span style="color: var(--color-primary);">ULTRA-FLEX</span>
+        </h2>
+        <p style="color: #94a3b8; font-size: 1.05rem; line-height: 1.8; margin-bottom: 30px;">
+          Từng sợi dệt được xử lý bằng công nghệ Micro-Channel giúp mồ hôi phân tán đều và bốc hơi nhanh gấp 3 lần so với vải cotton truyền thống. Giữ cơ thể luôn nhẹ nhàng, khô ráo và sẵn sàng chinh phục đỉnh cao mới.
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div style="background: #1e293b; padding: 20px; border-radius: var(--radius-lg); border: 1px solid #334155;">
+            <div style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: 8px;"><i class="fa-solid fa-shield-virus"></i></div>
+            <h4 style="color: #fff; font-size: 1rem; margin-bottom: 4px;">Kháng Khuẩn Ion Bạc</h4>
+            <p style="color: #94a3b8; font-size: 0.85rem;">Ngăn chặn sự phát triển của vi khuẩn gây mùi cơ thể.</p>
+          </div>
+          <div style="background: #1e293b; padding: 20px; border-radius: var(--radius-lg); border: 1px solid #334155;">
+            <div style="font-size: 1.5rem; color: var(--color-secondary); margin-bottom: 8px;"><i class="fa-solid fa-arrows-up-down-left-right"></i></div>
+            <h4 style="color: #fff; font-size: 1rem; margin-bottom: 4px;">Co Giãn 4 Chiều</h4>
+            <p style="color: #94a3b8; font-size: 0.85rem;">Tự do thực hiện mọi động tác Squat, Deadlift mà không sợ bung chỉ.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== NEW ARRIVALS ==================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-tag"><i class="fa-solid fa-sparkles"></i> Mới Lên Kệ</span>
+          <h2 class="section-title">Hàng Mới Về Tuần Này</h2>
+        </div>
+        <a href="products.html" class="section-link">Xem tất cả <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="product-grid" id="newArrivalsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-badge"><i class="fa-solid fa-bolt"></i></span>
+            <span class="logo-text">SPORT<span>IX</span></span>
+          </a>
+          <p class="footer-desc">
+            SPORTIX là thương hiệu trang phục và phụ kiện thể thao chuyên nghiệp. Tận tâm mang đến giải pháp đồ tập chất lượng chuẩn quốc tế, giúp người Việt bứt phá mọi giới hạn bản thân.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-link" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#" class="social-link" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Về SPORTIX</h4>
+          <ul class="footer-links">
+            <li><a href="products.html">Câu chuyện thương hiệu</a></li>
+            <li><a href="products.html">Công nghệ dệt ProDry</a></li>
+            <li><a href="products.html">Tuyển dụng & Sự nghiệp</a></li>
+            <li><a href="orders.html">Hệ thống showroom</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hỗ Trợ Khách Hàng</h4>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="openSizeGuide()">Hướng dẫn chọn Size chuẩn</a></li>
+            <li><a href="orders.html">Tra cứu hành trình đơn hàng</a></li>
+            <li><a href="products.html">Chính sách đổi trả 30 ngày</a></li>
+            <li><a href="cart.html">Chính sách giao nhận & Freeship</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Nhận Ưu Đãi VIP</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 12px; color: #94a3b8;">
+            Đăng ký email để nhận ngay voucher giảm <strong>15%</strong> cho đơn hàng đầu tiên!
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Đăng ký thành công', 'Mã VIP15 đã được gửi đến bạn!', 'success'); this.reset();">
+            <div class="newsletter-input-wrap">
+              <input type="email" class="newsletter-input" placeholder="Nhập địa chỉ email của bạn..." required>
+              <button type="submit" class="btn btn-primary btn-sm">Gửi</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 <strong>SPORTIX Official</strong>. Bản quyền thuộc về SPORTIX Store.
+        </div>
+        <div class="payment-methods">
+          <span class="payment-badge">COD</span>
+          <span class="payment-badge">VIETQR</span>
+          <span class="payment-badge">MOMO</span>
+          <span class="payment-badge">VISA / MASTER</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== SLIDE-OVER CART DRAWER ==================== -->
+  <div class="cart-overlay"></div>
+  <aside class="cart-drawer">
+    <div class="drawer-header">
+      <h3><i class="fa-solid fa-bag-shopping" style="color: var(--color-primary);"></i> Giỏ Hàng SPORTIX</h3>
+      <button type="button" class="close-drawer-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="drawer-body">
+      <!-- Mini cart items rendered dynamically via JS -->
+    </div>
+    <div class="drawer-footer">
+      <!-- Summary & checkout button rendered dynamically via JS -->
+    </div>
+  </aside>
+
+  <!-- ==================== QUICK VIEW MODAL ==================== -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-box">
+      <button type="button" class="modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-box-content">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
+

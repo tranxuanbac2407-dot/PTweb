@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi Tiết Sản Phẩm | SPORTIX</title>
+  <meta name="description" content="Chi tiết sản phẩm thể thao cao cấp SPORTIX. Vải co giãn 4 chiều, thấm hút mồ hôi siêu tốc.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .product-tabs-nav {
+      display: flex;
+      gap: 16px;
+      border-bottom: 2px solid var(--color-border);
+      margin-top: 50px;
+      margin-bottom: 30px;
+      overflow-x: auto;
+    }
+    .product-tab-btn {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      padding: 12px 16px;
+      position: relative;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color var(--transition-fast);
+    }
+    .product-tab-btn:hover,
+    .product-tab-btn.active {
+      color: var(--color-primary);
+    }
+    .product-tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--color-primary);
+      border-radius: 2px;
+    }
+    .product-tab-panel {
+      display: none;
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 30px;
+      border: 1px solid var(--color-border);
+    }
+    .product-tab-panel.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-ticker">
+        <span>⚡ BÙNG NỔ MÙA TẬP LUYỆN:</span>
+        <span>Nhập mã <span class="highlight">SPORTIX10</span> giảm ngay 10% đơn từ 300K</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="orders.html"><i class="fa-solid fa-truck-fast"></i> Tra cứu đơn hàng</a>
+        <span>|</span>
+        <a href="tel:19008888"><i class="fa-solid fa-headset"></i> Hotline: 1900 8888</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <button type="button" class="icon-btn mobile-menu-btn" aria-label="Menu">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
+
+      <a href="index.html" class="logo">
+        <span class="logo-badge"><i class="fa-solid fa-bolt"></i></span>
+        <span class="logo-text">SPORT<span>IX</span></span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Trang Chủ</a>
+        <a href="products.html" class="nav-link active">Cửa Hàng</a>
+        <a href="products.html?category=gym" class="nav-link">Tập Gym</a>
+        <a href="products.html?category=running" class="nav-link">Chạy Bộ</a>
+        <a href="products.html?category=football" class="nav-link">Bóng Đá</a>
+        <a href="products.html?category=yoga" class="nav-link">Yoga / Nữ</a>
+        <a href="products.html?category=jacket" class="nav-link">Áo Khoác</a>
+        <a href="products.html" class="nav-link hot-deal">Sale <span class="badge">HOT</span></a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="header-search-wrap">
+          <input type="text" class="header-search-input" placeholder="Tìm kiếm sản phẩm...">
+          <button type="button" class="header-search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <a href="products.html" class="icon-btn" title="Yêu thích">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge-count wishlist-count-badge" style="display: none;">0</span>
+        </a>
+
+        <button type="button" class="icon-btn open-cart-drawer" title="Giỏ hàng">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge-count cart-count-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top: 30px; margin-bottom: 70px;">
+    <!-- Container Chi Tiết Sản Phẩm -->
+    <div id="productDetailContainer">
+      <div style="text-align: center; padding: 60px 0;">
+        <i class="fa-solid fa-spinner fa-spin" style="font-size: 2rem; color: var(--color-primary);"></i>
+        <p style="margin-top: 10px; color: var(--color-text-muted);">Đang tải chi tiết sản phẩm...</p>
+      </div>
+    </div>
+
+    <!-- Tabs: Mô tả / Công nghệ & Đặc điểm / Đánh giá -->
+    <div class="product-tabs-nav">
+      <button type="button" class="product-tab-btn active" data-tab="tabDescription">Mô Tả Chi Tiết</button>
+      <button type="button" class="product-tab-btn" data-tab="tabSpecs">Công Nghệ & Thông Số</button>
+      <button type="button" class="product-tab-btn" data-tab="tabReviews">Đánh Giá Từ Khách Hàng</button>
+    </div>
+
+    <!-- Panel 1: Mô tả -->
+    <div class="product-tab-panel active" id="tabDescription">
+      <div id="tabDescriptionContent"></div>
+    </div>
+
+    <!-- Panel 2: Thông số -->
+    <div class="product-tab-panel" id="tabSpecs">
+      <h3 style="font-size: 1.2rem; margin-bottom: 16px;">Đặc Tính Kỹ Thuật Đột Phá</h3>
+      <div id="tabSpecsContent"></div>
+    </div>
+
+    <!-- Panel 3: Đánh giá -->
+    <div class="product-tab-panel" id="tabReviews">
+      <div style="display: grid; grid-template-columns: 1fr; gap: 40px;">
+        <!-- Danh sách nhận xét -->
+        <div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 16px;">Nhận Xét Của Khách Hàng</h3>
+          <div id="reviewsList"></div>
+        </div>
+
+        <!-- Form gửi đánh giá -->
+        <div style="background: var(--color-bg-body); padding: 24px; border-radius: var(--radius-lg); border: 1px solid var(--color-border); height: fit-content;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 14px;">Gửi Đánh Giá Của Bạn</h4>
+          <form id="addReviewForm" style="display: flex; flex-direction: column; gap: 14px;">
+            <div>
+              <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 6px;">Họ và tên của bạn:</label>
+              <input type="text" id="reviewAuthor" placeholder="Ví dụ: Hoàng Dũng" required 
+                     style="width: 100%; padding: 10px 14px; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: 0.9rem;">
+            </div>
+            <div>
+              <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 6px;">Đánh giá sao:</label>
+              <select id="reviewRatingSelect" style="width: 100%; padding: 10px 14px; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: 0.9rem; font-weight: 700;">
+                <option value="5">⭐⭐⭐⭐⭐ (5 sao - Tuyệt vời)</option>
+                <option value="4">⭐⭐⭐⭐ (4 sao - Rất tốt)</option>
+                <option value="3">⭐⭐⭐ (3 sao - Bình thường)</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 6px;">Cảm nhận thực tế khi mặc:</label>
+              <textarea id="reviewContent" rows="3" placeholder="Chia sẻ trải nghiệm về chất vải, độ co giãn, form size..." required
+                        style="width: 100%; padding: 10px 14px; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: 0.9rem;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Gửi Đánh Giá Ngay</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sản phẩm liên quan -->
+    <div style="margin-top: 70px;">
+      <div class="section-header">
+        <div>
+          <span class="section-tag"><i class="fa-solid fa-shapes"></i> Có Thể Bạn Thích</span>
+          <h2 class="section-title">Sản Phẩm Tương Tự</h2>
+        </div>
+        <a href="products.html" class="section-link">Xem tất cả <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="product-grid" id="relatedProductsGrid"></div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-badge"><i class="fa-solid fa-bolt"></i></span>
+            <span class="logo-text">SPORT<span>IX</span></span>
+          </a>
+          <p class="footer-desc">Thời trang thể thao chuyên nghiệp hàng đầu Việt Nam.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Về SPORTIX</h4>
+          <ul class="footer-links">
+            <li><a href="products.html">Câu chuyện thương hiệu</a></li>
+            <li><a href="products.html">Công nghệ ProDry</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Hỗ Trợ</h4>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="openSizeGuide()">Bảng chọn size</a></li>
+            <li><a href="orders.html">Lịch sử đơn hàng</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>SPORTIX App</h4>
+          <p style="font-size: 0.9rem; color: #94a3b8;">Đặt hàng nhanh chóng, đổi trả dễ dàng.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 SPORTIX Official. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Over Cart Drawer -->
+  <div class="cart-overlay"></div>
+  <aside class="cart-drawer">
+    <div class="drawer-header">
+      <h3><i class="fa-solid fa-bag-shopping" style="color: var(--color-primary);"></i> Giỏ Hàng SPORTIX</h3>
+      <button type="button" class="close-drawer-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="drawer-body"></div>
+    <div class="drawer-footer"></div>
+  </aside>
+
+  <!-- Quick View Modal -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-box">
+      <button type="button" class="modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-box-content"></div>
+    </div>
+  </div>
+
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/product-detail.js"></script>
+</body>
+</html>
+

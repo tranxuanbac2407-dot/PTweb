@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cửa Hàng Thời Trang Thể Thao | SPORTIX</title>
+  <meta name="description" content="Danh mục sản phẩm quần áo thể thao SPORTIX. Đa dạng mẫu mã tập gym, chạy bộ, bóng đá, yoga cho cả nam và nữ.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    /* Shop Layout Specific Styles */
+    .shop-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin: 30px 0 60px;
+    }
+    @media (min-width: 992px) {
+      .shop-layout {
+        grid-template-columns: 270px 1fr;
+      }
+    }
+    .shop-sidebar {
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-border);
+      padding: 24px;
+      height: fit-content;
+    }
+    @media (max-width: 991px) {
+      .shop-sidebar {
+        position: fixed;
+        top: 0;
+        left: -320px;
+        width: 300px;
+        height: 100vh;
+        z-index: 1050;
+        overflow-y: auto;
+        transition: left 0.3s ease;
+        box-shadow: 10px 0 30px rgba(0,0,0,0.15);
+      }
+      .shop-sidebar.active {
+        left: 0;
+      }
+    }
+    .filter-group {
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+    .filter-group:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .filter-group-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .filter-cat-list li {
+      margin-bottom: 8px;
+    }
+    .filter-cat-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      color: var(--color-text-main);
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+    }
+    .filter-cat-link:hover,
+    .filter-cat-link.active {
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+    .gender-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .gender-label input[type="radio"] {
+      accent-color: var(--color-primary);
+      width: 16px;
+      height: 16px;
+    }
+    .shop-topbar {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      padding: 14px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-ticker">
+        <span>⚡ BÙNG NỔ MÙA TẬP LUYỆN:</span>
+        <span>Nhập mã <span class="highlight">SPORTIX10</span> giảm ngay 10% đơn từ 300K</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="orders.html"><i class="fa-solid fa-truck-fast"></i> Tra cứu đơn hàng</a>
+        <span>|</span>
+        <a href="tel:19008888"><i class="fa-solid fa-headset"></i> Hotline: 1900 8888</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <button type="button" class="icon-btn mobile-menu-btn" aria-label="Menu">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
+
+      <a href="index.html" class="logo">
+        <span class="logo-badge"><i class="fa-solid fa-bolt"></i></span>
+        <span class="logo-text">SPORT<span>IX</span></span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Trang Chủ</a>
+        <a href="products.html" class="nav-link active">Cửa Hàng</a>
+        <a href="products.html?category=gym" class="nav-link">Tập Gym</a>
+        <a href="products.html?category=running" class="nav-link">Chạy Bộ</a>
+        <a href="products.html?category=football" class="nav-link">Bóng Đá</a>
+        <a href="products.html?category=yoga" class="nav-link">Yoga / Nữ</a>
+        <a href="products.html?category=jacket" class="nav-link">Áo Khoác</a>
+        <a href="products.html" class="nav-link hot-deal">Sale <span class="badge">HOT</span></a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="header-search-wrap">
+          <input type="text" class="header-search-input" placeholder="Tìm quần áo, phụ kiện...">
+          <button type="button" class="header-search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <a href="products.html" class="icon-btn" title="Yêu thích">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge-count wishlist-count-badge" style="display: none;">0</span>
+        </a>
+
+        <button type="button" class="icon-btn open-cart-drawer" title="Giỏ hàng">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge-count cart-count-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Breadcrumb -->
+    <nav style="margin-top: 24px; font-size: 0.88rem; color: var(--color-text-muted);">
+      <a href="index.html">Trang chủ</a> <span style="margin: 0 8px;">/</span>
+      <span style="color: var(--color-dark); font-weight: 700;">Cửa Hàng Sản Phẩm</span>
+    </nav>
+
+    <div class="shop-layout">
+      <!-- SIDEBAR FILTERS -->
+      <aside class="shop-sidebar">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <h3 style="font-size: 1.15rem; text-transform: uppercase;">Bộ Lọc</h3>
+          <button type="button" id="closeMobileFilter" style="display: none; font-size: 1.2rem;" class="mobile-close-filter"><i class="fa-solid fa-xmark"></i></button>
+          <button type="button" id="resetFiltersBtn" style="color: var(--color-primary); font-size: 0.82rem; font-weight: 700;">Đặt lại</button>
+        </div>
+
+        <!-- 1. Danh mục -->
+        <div class="filter-group">
+          <h4 class="filter-group-title">Danh Mục</h4>
+          <ul class="filter-cat-list">
+            <li><a href="#" class="filter-cat-link active" data-filter-cat="all">Tất cả sản phẩm</a></li>
+            <li><a href="#" class="filter-cat-link" data-filter-cat="gym">Tập Gym & Fitness</a></li>
+            <li><a href="#" class="filter-cat-link" data-filter-cat="running">Chạy Bộ & Điền Kinh</a></li>
+            <li><a href="#" class="filter-cat-link" data-filter-cat="football">Bóng Đá Thi Đấu</a></li>
+            <li><a href="#" class="filter-cat-link" data-filter-cat="yoga">Yoga & Pilates</a></li>
+            <li><a href="#" class="filter-cat-link" data-filter-cat="jacket">Áo Khoác & Giữ Nhiệt</a></li>
+          </ul>
+        </div>
+
+        <!-- 2. Giới tính -->
+        <div class="filter-group">
+          <h4 class="filter-group-title">Dành Cho</h4>
+          <label class="gender-label">
+            <input type="radio" name="filterGender" value="all" checked>
+            <span>Tất cả</span>
+          </label>
+          <label class="gender-label">
+            <input type="radio" name="filterGender" value="nam">
+            <span>Nam giới</span>
+          </label>
+          <label class="gender-label">
+            <input type="radio" name="filterGender" value="nu">
+            <span>Nữ giới</span>
+          </label>
+          <label class="gender-label">
+            <input type="radio" name="filterGender" value="unisex">
+            <span>Unisex</span>
+          </label>
+        </div>
+
+        <!-- 3. Khoảng giá -->
+        <div class="filter-group">
+          <h4 class="filter-group-title">Mức Giá Tối Đa</h4>
+          <div style="font-weight: 800; color: var(--color-primary); font-size: 1.1rem; margin-bottom: 10px;" id="priceRangeValue">1.000.000₫</div>
+          <input type="range" id="priceRangeInput" min="150000" max="1000000" step="50000" value="1000000" style="width: 100%; accent-color: var(--color-primary);">
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--color-text-muted); margin-top: 4px;">
+            <span>150.000₫</span>
+            <span>1.000.000₫</span>
+          </div>
+        </div>
+
+        <!-- 4. Kích cỡ -->
+        <div class="filter-group">
+          <h4 class="filter-group-title">Kích Cỡ (Size)</h4>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button type="button" class="size-btn filter-size-btn" data-size="S">S</button>
+            <button type="button" class="size-btn filter-size-btn" data-size="M">M</button>
+            <button type="button" class="size-btn filter-size-btn" data-size="L">L</button>
+            <button type="button" class="size-btn filter-size-btn" data-size="XL">XL</button>
+            <button type="button" class="size-btn filter-size-btn" data-size="XXL">XXL</button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN PRODUCTS AREA -->
+      <section>
+        <!-- Top controls bar -->
+        <div class="shop-topbar">
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <button type="button" class="btn btn-outline btn-sm" id="toggleMobileFilter" style="display: none;">
+              <i class="fa-solid fa-filter"></i> Lọc
+            </button>
+            <span id="productsCountText" style="font-size: 0.92rem; color: var(--color-text-muted); font-weight: 600;">
+              Đang tải danh sách...
+            </span>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+            <!-- Tìm kiếm nhanh tại shop -->
+            <div style="position: relative; width: 220px;">
+              <input type="text" id="shopSearchInput" placeholder="Tìm kiếm nhanh..." 
+                     style="width: 100%; padding: 8px 30px 8px 12px; border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: 0.85rem;">
+              <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); font-size: 0.8rem;"></i>
+            </div>
+
+            <!-- Sắp xếp -->
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <label for="productSortSelect" style="font-size: 0.85rem; color: var(--color-text-muted); white-space: nowrap;">Sắp xếp:</label>
+              <select id="productSortSelect" style="padding: 8px 12px; border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: 0.85rem; background: #fff; font-weight: 600;">
+                <option value="default">Mặc định</option>
+                <option value="newest">Hàng mới nhất</option>
+                <option value="price-asc">Giá tăng dần</option>
+                <option value="price-desc">Giá giảm dần</option>
+                <option value="rating-desc">Đánh giá cao nhất</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid" id="shopProductsGrid"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-badge"><i class="fa-solid fa-bolt"></i></span>
+            <span class="logo-text">SPORT<span>IX</span></span>
+          </a>
+          <p class="footer-desc">
+            Trang phục thể thao chính hãng SPORTIX. Chuyên cung cấp đồ tập gym, chạy bộ, bóng đá chuẩn form vận động viên.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Về SPORTIX</h4>
+          <ul class="footer-links">
+            <li><a href="products.html">Câu chuyện thương hiệu</a></li>
+            <li><a href="products.html">Công nghệ dệt ProDry</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Hỗ Trợ Khách Hàng</h4>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="openSizeGuide()">Hướng dẫn chọn Size</a></li>
+            <li><a href="orders.html">Lịch sử đơn hàng</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Nhận Ưu Đãi</h4>
+          <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 10px;">Nhận voucher 15% cho thành viên mới.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 SPORTIX Official. All rights reserved.</div>
+        <div class="payment-methods">
+          <span class="payment-badge">COD</span>
+          <span class="payment-badge">VIETQR</span>
+          <span class="payment-badge">MOMO</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Over Cart Drawer -->
+  <div class="cart-overlay"></div>
+  <aside class="cart-drawer">
+    <div class="drawer-header">
+      <h3><i class="fa-solid fa-bag-shopping" style="color: var(--color-primary);"></i> Giỏ Hàng SPORTIX</h3>
+      <button type="button" class="close-drawer-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="drawer-body"></div>
+    <div class="drawer-footer"></div>
+  </aside>
+
+  <!-- Quick View Modal -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-box">
+      <button type="button" class="modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-box-content"></div>
+    </div>
+  </div>
+
+  <script>
+    if (window.innerWidth < 992) {
+      const btn = document.getElementById('toggleMobileFilter');
+      if (btn) btn.style.display = 'inline-flex';
+      const closeB = document.getElementById('closeMobileFilter');
+      if (closeB) closeB.style.display = 'block';
+    }
+  </script>
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>
+
