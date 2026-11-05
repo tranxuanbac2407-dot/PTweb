@@ -100,8 +100,8 @@ function initCategoryPills(products) {
     });
   });
 
-  // Hỗ trợ click các tab trên thanh Navigation ở Trang Chủ để chuyển tab trực tiếp
-  const navLinks = document.querySelectorAll(".main-nav .nav-link, .mobile-nav-drawer a");
+  // Hỗ trợ click các tab trên thanh Navigation & Category cards ở Trang Chủ để chuyển tab trực tiếp
+  const navLinks = document.querySelectorAll(".main-nav .nav-link, .mobile-nav-drawer a, .category-card[data-home-cat]");
   navLinks.forEach(link => {
     // 1. Chuyển tab danh mục trực tiếp trên giao diện trang chủ
     if (link.hasAttribute("data-home-cat")) {
