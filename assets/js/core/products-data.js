@@ -404,7 +404,7 @@ async function getProducts() {
     return window.SPORTIX_PRODUCTS;
   }
   try {
-    const res = await fetch("data/products.json");
+    const res = await fetch("assets/data/products.json");
     if (res.ok) {
       const data = await res.json();
       window.SPORTIX_PRODUCTS = data;

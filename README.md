@@ -60,27 +60,33 @@ SPORTIX là trang web thương mại điện tử chuyên cung cấp quần áo 
 
 ```
 PTweb/
+├── package.json               # Cấu hình npm & script chạy dev server
+├── scripts/
+│   └── dev-server.js          # Static server không cần thư viện ngoài
 ├── index.html                 # Trang chủ nổi bật
 ├── products.html              # Cửa hàng, bộ lọc & tìm kiếm
 ├── product-detail.html        # Chi tiết sản phẩm & đánh giá
 ├── cart.html                  # Giỏ hàng & áp dụng mã giảm giá
 ├── checkout.html              # Thanh toán & tạo đơn hàng
 ├── orders.html                # Quản lý lịch sử đơn hàng đã đặt
-├── css/
-│   ├── style.css              # Hệ thống biến màu sắc, typography, reset & layout
-│   └── components.css         # UI components: Product card, Hero, Drawer, Modal, Toast
-├── js/
-│   ├── products-data.js       # Dữ liệu sản phẩm mẫu (hỗ trợ cả file:// và http://)
-│   ├── storage.js             # Quản lý LocalStorage (Cart, Wishlist, Orders, Voucher)
-│   ├── main.js                # Core logic: Header, Drawer, Toast, QuickView modal
-│   ├── home.js                # Logic trang chủ (Countdown, Flash sale, Featured)
-│   ├── products.js            # Logic trang shop (Filter đa chiều, Search, Sort)
-│   ├── product-detail.js      # Logic trang chi tiết (Gallery, Tabs, Size, Reviews)
-│   ├── cart.js                # Logic trang giỏ hàng (Progress bar freeship, Coupon)
-│   ├── checkout.js            # Logic thanh toán (Form validation, Order creation)
-│   └── orders.js              # Logic lịch sử đơn hàng
-└── data/
-    └── products.json          # File JSON dữ liệu sản phẩm gốc
+└── assets/
+    ├── css/
+    │   ├── style.css          # Hệ thống biến màu sắc, typography, reset & layout
+    │   └── components.css     # UI components: Product card, Hero, Drawer, Modal, Toast
+    ├── data/
+    │   └── products.json      # File JSON dữ liệu sản phẩm gốc
+    └── js/
+        ├── core/              # Logic dùng chung cho mọi trang
+        │   ├── products-data.js   # Dữ liệu sản phẩm mẫu (hỗ trợ cả file:// và http://)
+        │   ├── storage.js         # Quản lý LocalStorage (Cart, Wishlist, Orders, Voucher)
+        │   └── main.js            # Header, Drawer, Toast, QuickView modal
+        └── pages/             # Logic riêng theo từng trang
+            ├── home.js            # Trang chủ (Countdown, Flash sale, Featured)
+            ├── products.js        # Trang shop (Filter đa chiều, Search, Sort)
+            ├── product-detail.js  # Trang chi tiết (Gallery, Tabs, Size, Reviews)
+            ├── cart.js            # Trang giỏ hàng (Progress bar freeship, Coupon)
+            ├── checkout.js        # Trang thanh toán (Form validation, Order creation)
+            └── orders.js          # Trang lịch sử đơn hàng
 ```
 
 ---
@@ -89,13 +95,21 @@ PTweb/
 
 Website được thiết kế hoàn toàn bằng HTML, CSS và JavaScript thuần nên bạn có thể chạy theo bất kỳ cách nào:
 
-### Cách 1: Mở trực tiếp (Không cần cài đặt)
+### Cách 1: Chạy bằng npm (khuyến nghị)
+```bash
+npm run dev
+```
+Sau đó truy cập: `http://localhost:3000`.
+
+Script này dùng static server viết sẵn trong `scripts/dev-server.js`, không cần cài thêm thư viện.
+
+### Cách 2: Mở trực tiếp (Không cần cài đặt)
 Chỉ cần nhấp đúp vào tệp **`index.html`** trên máy tính để mở trên trình duyệt (Chrome, Safari, Edge, Firefox).
 
-### Cách 2: Chạy với Live Server hoặc Local HTTP Server
+### Cách 3: Chạy với Live Server hoặc Local HTTP Server
 ```bash
 # Sử dụng Python có sẵn trên máy:
-python3 -m http.server 8000
+python -m http.server 8000
 
 # Hoặc dùng npx serve:
 npx serve .
