@@ -564,6 +564,20 @@ window.handleQuickAdd = function(productId) {
 };
 
 window.openSizeGuide = function() {
-  alert("BẢNG CHỌN SIZE SPORTIX:\n- Size S: 50 - 58kg (Cao 1m55 - 1m64)\n- Size M: 59 - 67kg (Cao 1m65 - 1m72)\n- Size L: 68 - 75kg (Cao 1m73 - 1m78)\n- Size XL: 76 - 84kg (Cao 1m78 - 1m85)\n- Size XXL: Trên 85kg\n\n*Nếu đang ở giữa 2 size, bạn nên chọn tăng 1 size để mặc thoải mái khi vận động thể thao!");
+  const modal = document.getElementById("sizeGuideModal");
+  if (modal) {
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  } else {
+    alert("BẢNG CHỌN SIZE SPORTIX:\n- Size S: 50 - 58kg (Cao 1m55 - 1m64)\n- Size M: 59 - 67kg (Cao 1m65 - 1m72)\n- Size L: 68 - 75kg (Cao 1m73 - 1m78)\n- Size XL: 76 - 84kg (Cao 1m78 - 1m85)\n- Size XXL: Trên 85kg\n\n*Nếu đang ở giữa 2 size, bạn nên chọn tăng 1 size để mặc thoải mái khi vận động thể thao!");
+  }
+};
+
+window.closeSizeGuide = function() {
+  const modal = document.getElementById("sizeGuideModal");
+  if (modal) {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+  }
 };
 
