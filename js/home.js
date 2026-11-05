@@ -103,31 +103,54 @@ function initCategoryPills(products) {
   // Hỗ trợ click các tab trên thanh Navigation ở Trang Chủ để chuyển tab trực tiếp
   const navLinks = document.querySelectorAll(".main-nav .nav-link, .mobile-nav-drawer a");
   navLinks.forEach(link => {
-    const href = link.getAttribute("href") || "";
-    if (href.includes("category=")) {
-      link.addEventListener("click", (e) => {
-        // Nếu đang ở trang chủ, cho phép chuyển tab trực tiếp ngay trên trang
-        const cat = href.split("category=")[1];
-        const matchingPill = document.querySelector(`.home-category-pills .filter-pill[data-category="${cat}"]`);
-        if (matchingPill) {
-          e.preventDefault();
-          navLinks.forEach(l => l.classList.remove("active"));
-          link.classList.add("active");
-          matchingPill.click();
-          // Cuộn mượt xuống khu vực sản phẩm
-          const section = document.getElementById("featuredSection") || container.closest(".section");
-          if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
-          }
-          showToast("Đã chuyển tab", `Đang xem sản phẩm: ${link.textContent.trim()}`, "info");
-        }
-      });
-    } else if (link.hasAttribute("data-disabled")) {
+    // 1. Chuyển tab danh mục trực tiếp trên giao diện trang chủ
+    if (link.hasAttribute("data-home-cat")) {
       link.addEventListener("click", (e) => {
         e.preventDefault();
-        showToast("Thông báo", "Phần tab này đang cập nhật, hiện tại chưa vào được!", "info");
+        const cat = link.getAttribute("data-home-cat");
+        
+        // Cập nhật active link
+        navLinks.forEach(l => l.classList.remove("active"));
+        link.classList.add("active");
+
+        // Tìm nút tab tương ứng trong phần danh mục
+        const matchingPill = document.querySelector(`.home-category-pills .filter-pill[data-category="${cat}"]`);
+        if (matchingPill) {
+          pills.forEach(p => p.classList.remove("active"));
+          matchingPill.classList.add("active");
+          filterAndRender(cat);
+        }
+
+        // Đóng mobile drawer nếu đang mở
+        const mobileNav = document.querySelector(".mobile-nav-drawer");
+        const mobileOverlay = document.querySelector(".mobile-nav-overlay");
+        if (mobileNav) mobileNav.classList.remove("active");
+        if (mobileOverlay) mobileOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+
+        // Cuộn mượt đến phần sản phẩm
+        const section = document.getElementById("featuredSection") || container.closest(".section");
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
       });
     }
+
+    // 2. Xử lý các tab khác (chưa cần vào theo yêu cầu)
+    if (link.classList.contains("pending-tab")) {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        showToast("Thông báo", "Phần tab này chưa cần vào theo yêu cầu hiện tại — Hãy trải nghiệm giao diện chính nhé!", "info");
+      });
+    }
+  });
+
+  // Gắn sự kiện cho các link khác trên trang có class pending-tab
+  document.querySelectorAll(".pending-tab").forEach(el => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      showToast("Giao diện SPORTIX", "Tab này chưa cần vào trong giai đoạn hiện tại!", "info");
+    });
   });
 }
 

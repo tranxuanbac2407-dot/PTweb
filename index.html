@@ -45,14 +45,14 @@
 
       <!-- Desktop Nav -->
       <nav class="main-nav">
-        <a href="index.html" class="nav-link active">Trang Chủ</a>
-        <a href="products.html" class="nav-link">Cửa Hàng</a>
-        <a href="products.html?category=gym" class="nav-link">Tập Gym</a>
-        <a href="products.html?category=running" class="nav-link">Chạy Bộ</a>
-        <a href="products.html?category=football" class="nav-link">Bóng Đá</a>
-        <a href="products.html?category=yoga" class="nav-link">Yoga / Nữ</a>
-        <a href="products.html?category=jacket" class="nav-link">Áo Khoác</a>
-        <a href="products.html" class="nav-link hot-deal">Sale <span class="badge">HOT</span></a>
+        <a href="#featuredSection" class="nav-link active" data-home-cat="all">Trang Chủ</a>
+        <a href="#featuredSection" class="nav-link" data-home-cat="gym">Tập Gym</a>
+        <a href="#featuredSection" class="nav-link" data-home-cat="running">Chạy Bộ</a>
+        <a href="#featuredSection" class="nav-link" data-home-cat="football">Bóng Đá</a>
+        <a href="#featuredSection" class="nav-link" data-home-cat="yoga">Yoga / Nữ</a>
+        <a href="#featuredSection" class="nav-link" data-home-cat="jacket">Áo Khoác</a>
+        <a href="#flashSaleSection" class="nav-link hot-deal">Sale <span class="badge">HOT</span></a>
+        <a href="javascript:void(0)" class="nav-link pending-tab" style="color: var(--color-text-muted); font-size: 0.85rem;" title="Tab chưa cần vào">Khác <i class="fa-solid fa-lock" style="font-size: 0.75rem;"></i></a>
       </nav>
 
       <!-- Actions: Search, Wishlist, Cart -->
@@ -94,14 +94,13 @@
       <input type="text" class="header-search-input" placeholder="Tìm kiếm sản phẩm..." style="width: 100%;">
     </div>
     <nav style="display: flex; flex-direction: column; gap: 14px; font-family: var(--font-heading); font-weight: 700; text-transform: uppercase;">
-      <a href="index.html" style="color: var(--color-primary);">Trang Chủ</a>
-      <a href="products.html">Tất Cả Sản Phẩm</a>
-      <a href="products.html?category=gym">Gym & Fitness</a>
-      <a href="products.html?category=running">Chạy Bộ Marathon</a>
-      <a href="products.html?category=football">Quần Áo Bóng Đá</a>
-      <a href="products.html?category=yoga">Yoga & Thể Thao Nữ</a>
-      <a href="products.html?category=jacket">Áo Khoác Thể Thao</a>
-      <a href="orders.html">Lịch Sử Đơn Hàng</a>
+      <a href="#featuredSection" data-home-cat="all" class="close-mobile-nav-link" style="color: var(--color-primary);">Trang Chủ</a>
+      <a href="#featuredSection" data-home-cat="gym" class="close-mobile-nav-link">Gym & Fitness</a>
+      <a href="#featuredSection" data-home-cat="running" class="close-mobile-nav-link">Chạy Bộ Marathon</a>
+      <a href="#featuredSection" data-home-cat="football" class="close-mobile-nav-link">Quần Áo Bóng Đá</a>
+      <a href="#featuredSection" data-home-cat="yoga" class="close-mobile-nav-link">Yoga & Thể Thao Nữ</a>
+      <a href="#featuredSection" data-home-cat="jacket" class="close-mobile-nav-link">Áo Khoác Thể Thao</a>
+      <a href="javascript:void(0)" class="pending-tab close-mobile-nav-link" style="color: var(--color-text-muted);">Tab Khác (Chưa Cần Vào)</a>
     </nav>
   </aside>
 
@@ -257,7 +256,7 @@
   </section>
 
   <!-- ==================== FLASH SALE SECTION ==================== -->
-  <section class="section" style="padding-top: 0;">
+  <section class="section" id="flashSaleSection" style="padding-top: 0;">
     <div class="container">
       <div class="flash-sale-box">
         <div class="flash-sale-header">
