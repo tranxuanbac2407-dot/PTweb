@@ -514,6 +514,17 @@ function renderProductCard(product) {
           <span class="current-price">${formatCurrency(product.price)}</span>
           ${product.originalPrice ? `<span class="original-price">${formatCurrency(product.originalPrice)}</span>` : ""}
         </div>
+        ${product.isFlashSale ? `
+          <div style="margin-top: 10px;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #ef4444; font-weight: 700; margin-bottom: 4px;">
+              <span><i class="fa-solid fa-fire"></i> Đã bán ${Math.floor(65 + (product.sold % 30))}%</span>
+              <span>Chỉ còn 8 suất</span>
+            </div>
+            <div style="width: 100%; height: 6px; background: #fee2e2; border-radius: 3px; overflow: hidden;">
+              <div style="width: ${Math.floor(65 + (product.sold % 30))}%; height: 100%; background: linear-gradient(90deg, #f59e0b, #ef4444); border-radius: 3px;"></div>
+            </div>
+          </div>
+        ` : ""}
         ${product.colors ? `
           <div class="color-swatches">
             ${product.colors.map(c => `<span class="color-dot" style="background: ${c.hex};" title="${c.name}"></span>`).join("")}
