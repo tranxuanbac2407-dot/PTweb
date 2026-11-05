@@ -78,7 +78,7 @@ function renderNewArrivals(products) {
 // Bộ lọc tabs danh mục nhanh trên trang chủ
 function initCategoryPills(products) {
   const pills = document.querySelectorAll(".home-category-pills .filter-pill");
-  const container = document.getElementById("categoryProductsGrid");
+  const container = document.getElementById("featuredGrid");
   if (!pills.length || !container) return;
 
   const filterAndRender = (category) => {
@@ -98,6 +98,36 @@ function initCategoryPills(products) {
       const cat = pill.getAttribute("data-category");
       filterAndRender(cat);
     });
+  });
+
+  // Hỗ trợ click các tab trên thanh Navigation ở Trang Chủ để chuyển tab trực tiếp
+  const navLinks = document.querySelectorAll(".main-nav .nav-link, .mobile-nav-drawer a");
+  navLinks.forEach(link => {
+    const href = link.getAttribute("href") || "";
+    if (href.includes("category=")) {
+      link.addEventListener("click", (e) => {
+        // Nếu đang ở trang chủ, cho phép chuyển tab trực tiếp ngay trên trang
+        const cat = href.split("category=")[1];
+        const matchingPill = document.querySelector(`.home-category-pills .filter-pill[data-category="${cat}"]`);
+        if (matchingPill) {
+          e.preventDefault();
+          navLinks.forEach(l => l.classList.remove("active"));
+          link.classList.add("active");
+          matchingPill.click();
+          // Cuộn mượt xuống khu vực sản phẩm
+          const section = document.getElementById("featuredSection") || container.closest(".section");
+          if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+          }
+          showToast("Đã chuyển tab", `Đang xem sản phẩm: ${link.textContent.trim()}`, "info");
+        }
+      });
+    } else if (link.hasAttribute("data-disabled")) {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        showToast("Thông báo", "Phần tab này đang cập nhật, hiện tại chưa vào được!", "info");
+      });
+    }
   });
 }
 
