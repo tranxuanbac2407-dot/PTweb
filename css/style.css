@@ -636,3 +636,15 @@ h1, h2, h3, h4, h5, h6 {
   gap: 10px;
 }
 
+@media (min-width: 768px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tech-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
