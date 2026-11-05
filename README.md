@@ -16,54 +16,43 @@ SPORTIX là trang web thương mại điện tử chuyên cung cấp quần áo 
 
 ---
 
-## ✨ Các Tính Năng Nổi Bật
+## ✨ Các Tính Năng Giao Diện Nổi Bật (SPORTIX UI)
 
-1. **Trang Chủ (`index.html`)**:
-   - Header sticky, thông báo khuyến mãi, tìm kiếm thời gian thực.
-   - Hero banner phong cách thể thao mạnh mẽ với slogan và chỉ số ấn tượng.
-   - Dải cam kết chất lượng (Giao nhanh 2h, Đổi trả 30 ngày, 100% Chính hãng).
-   - Bộ sưu tập danh mục nổi bật (Gym, Running, Football, Yoga, Jacket).
-   - **Flash Sale Giờ Vàng**: Đồng hồ đếm ngược thời gian thực, huy hiệu giảm giá.
-   - Bộ lọc tabs danh mục nhanh tại trang chủ.
-   - Banner giới thiệu công nghệ sợi vải **ProDry & Ultra-Flex**.
+1. **Thanh Điều Hướng & Chuyển Tab Danh Mục Trực Tiếp**:
+   - Header sticky, thông báo ưu đãi giờ vàng.
+   - Các tab chính (*Trang chủ, Gym & Fitness, Chạy bộ, Bóng đá, Yoga / Nữ, Áo khoác gió, Sale HOT*) cho phép chuyển tab và lọc sản phẩm linh hoạt ngay trên giao diện mà không cần reload trang.
+   - Các tab khác chưa cần vào trong giai đoạn này được tích hợp thông báo Toast thân thiện: *"Tab này chưa cần vào theo yêu cầu hiện tại"*.
 
-2. **Cửa Hàng / Danh Mục (`products.html`)**:
-   - Lọc đa chiều: Theo danh mục, theo giới tính (Nam / Nữ / Unisex), khoảng giá (slider), kích cỡ (S, M, L, XL, XXL).
-   - Tìm kiếm từ khóa theo thời gian thực (tên sản phẩm, mô tả).
-   - Sắp xếp sản phẩm: Mặc định, Hàng mới nhất, Giá tăng dần, Giá giảm dần, Đánh giá cao nhất.
-   - Drawer bộ lọc mượt mà trên thiết bị di động.
+2. **Hero Banner & Trust Proof Vận Động Viên**:
+   - Slogan ấn tượng: *Break Your Limits - Bứt Phá Mọi Giới Hạn*.
+   - Khối huy hiệu động giới thiệu công nghệ thoát ẩm siêu tốc QuickDry.
+   - Chỉ số tin cậy 4.9★ từ hơn 50.000 vận động viên thể hình và điền kinh.
+   - Nút kêu gọi hành động cuộn mượt xuống bộ sưu tập và Flash Sale.
 
-3. **Chi Tiết Sản Phẩm (`product-detail.html`)**:
-   - Thư viện hình ảnh: Click thumbnail chuyển ảnh chính mượt mà.
-   - Chọn màu sắc & chọn size động với hiển thị nhãn thời gian thực.
-   - Hướng dẫn bảng chọn size chuẩn theo cân nặng & chiều cao.
-   - Tùy chỉnh số lượng, nút **Thêm vào giỏ hàng** và nút **Mua ngay** (chuyển thẳng đến thanh toán).
-   - Nút yêu thích (Wishlist).
-   - Hệ thống Tabs: *Mô tả chi tiết*, *Thông số công nghệ*, *Đánh giá của khách hàng*.
-   - Cho phép khách hàng gửi đánh giá & bình luận mới (tự động lưu vào LocalStorage).
-   - Gợi ý sản phẩm cùng danh mục.
+3. **Danh Mục Thể Thao Nổi Bật (Showcase)**:
+   - 5 bộ sưu tập trọng tâm: Gym, Running, Football, Yoga, Windbreaker.
+   - Tương tác click danh mục tự động cuộn và lọc tab tương ứng.
 
-4. **Giỏ Hàng Đa Năng (`cart.html` & Mini-Cart Drawer)**:
-   - **Slide-over Mini Cart Drawer**: Mở từ thanh tiêu đề mọi lúc mà không cần rời trang.
-   - Thanh tiến trình **Freeship** thông minh: Hiển thị số tiền cần mua thêm để được miễn phí vận chuyển.
-   - Tăng/giảm số lượng hoặc xóa từng sản phẩm.
-   - **Hệ thống Voucher Coupon**:
-     - `SPORTIX10`: Giảm 10% đơn từ 300.000₫.
-     - `SPORTIX50K`: Giảm 50.000₫ đơn từ 500.000₫.
-     - `FREESHIP`: Miễn phí vận chuyển toàn quốc.
-   - Tự động tính tiền hàng, phí ship, số tiền giảm và tổng thanh toán.
+4. **Khối Flash Sale Giờ Vàng**:
+   - Đồng hồ đếm ngược thời gian thực (Giờ : Phút : Giây).
+   - Thanh tiến độ hiển thị số lượng đã bán và suất ưu đãi còn lại trên từng card.
 
-5. **Thanh Toán (`checkout.html`)**:
-   - Form thông tin nhận hàng với validate dữ liệu (họ tên, số điện thoại, tỉnh thành, địa chỉ, ghi chú).
-   - Phương thức thanh toán:
-     - COD (Thanh toán tiền mặt khi nhận hàng).
-     - Chuyển khoản VietQR 24/7 (mô phỏng mã QR tài khoản ngân hàng).
-     - Thẻ tín dụng quốc tế (Visa / Mastercard).
-   - Màn hình xác nhận đơn hàng thành công kèm mã vận đơn tự động sinh.
+5. **Card Sản Phẩm & Modal Xem Nhanh (Quick View)**:
+   - Ảnh góc rộng tỉ lệ thể thao 4:5, huy hiệu giảm giá và mác NEW / HOT.
+   - Đốm chọn màu sắc trực quan (Color Swatches).
+   - Modal xem nhanh chi tiết sản phẩm, chọn size, xem chất liệu mà không cần chuyển trang.
 
-6. **Lịch Sử Đơn Hàng (`orders.html`)**:
-   - Quản lý toàn bộ danh sách đơn hàng đã mua lưu trong LocalStorage.
-   - Xem chi tiết từng món đồ, trạng thái đơn, thời gian đặt và địa chỉ giao nhận.
+6. **Bảng Quy Chuẩn Chọn Size (Size Guide Modal)**:
+   - Modal tra cứu kích cỡ chuẩn từ S đến XXL dựa trên cân nặng, chiều cao, số đo ngực và form dáng (Slim-fit, Regular, Athletic, Oversize).
+
+7. **Khối Giới Thiệu 4 Trụ Cột Công Nghệ Sợi Dệt**:
+   - *ProDry™ Micro-Channel*: Thoát ẩm siêu tốc.
+   - *Ultra-Flex 360°*: Co giãn 4 chiều vận động tối đa.
+   - *Anti-Odor Silver-Ion*: Kháng khuẩn ion bạc ngăn mùi.
+   - *HydroShield DWR*: Cản gió và kháng nước trượt mưa phùn.
+
+8. **Đánh Giá Trải Nghiệm Thực Tế (Testimonials)**:
+   - Lời nhận xét và chứng thực chất lượng từ các huấn luyện viên thể hình (PT), vận động viên marathon và đội trưởng bóng đá.
 
 ---
 
